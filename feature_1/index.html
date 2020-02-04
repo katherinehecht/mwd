@@ -35,7 +35,11 @@
                     <a href="#"><i class="material-icons">local_drink</i></a>
                 </div>
                 <div>
+<<<<<<< HEAD:feature1 4/index.html
                     <a href="/#/second">Welcome to the Bender!</a>
+=======
+                    <a href="/#/deals">Deals</a>
+>>>>>>> 5914dfdc1e27ae675aaa9f2f00b2ba35fd76a2a2:feature_1/index.html
                 </div>
             </div>
         </md-toolbar>
@@ -113,9 +117,19 @@
 
 
 
-    <!-- TODO: ADD ROUTING -->
-    <div ng-view></div>
+    <!--TODO-->
+    <div class="container">
+        <!--MainController-->
+        <div ng-controller="MainController">
+            <div ng-view> </div>
+        </div>
 
+        <!--DealsController-->
+        <div ng-controller="DealsController">
+            <div ng-view> </div>
+
+        </div>
+    </div>
 </body>
 
 </html>
