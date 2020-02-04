@@ -1,0 +1,65 @@
+var mtData = [{
+		"name": "25 cent wings",
+		"location": "Brother’s",
+		"description": "Come in this Wednesday at 9 pm to save major $$ on our delicious wings. 6 flavors to choose from!",
+		"occur_at": 2020-02-26T21:00:43.511Z,
+		"eventimg": "string",
+		"taken": 0,
+		"capacity": 100,
+		"value_saved": 100
+	},
+	{
+		"name": "$2 cover before 10 pm",
+		"location": "CJ’s",
+		"description": "Come in before 10:00 pm on Thursday 2/27 for $2 Cover!",
+		"occur_at": 2020-02-27T22:00:43.511Z,
+		"eventimg": "string",
+		"taken": 10,
+		"capacity": 30,
+		"value_saved": 20
+	},
+	{
+		"name": "Buy One Get One Blue Moon",
+		"location": "Corby’s",
+		"description": "You won't see deals like this at Finnies...come with friends this Friday to share some Blue Moons!",
+		"occur_at": 2020-02-28T18:00:43.511Z,
+		"eventimg": "string",
+		"taken": 700,
+		"capacity": 1000,
+		"value_saved": 300
+	}
+];
+
+function append_json(data) {
+    //Set Up the template
+  var s = $("#postTemplate")[0].innerHTML.trim();
+  var holder = document.createElement('div');
+  holder.innerHTML = s;
+  var template = holder.childNodes;
+
+  var event = document.getElementById('newevents');
+  data.forEach(function(object) {
+
+    //Clone Template
+    var newItem = $(template).clone();
+
+    //Populate it
+    $(newItem).find(".name").html(object.name);
+    $(newItem).find(".location").html($(newItem).find(".location").html() + " " + object.location);
+    $(newItem).find(".description").attr("href", object.description);
+    $(newItem).find(".occur_at").html(object.occur_at);
+    var img = $(newItem).find(".thumb")
+    $(img).attr("src", object.eventimg).attr("alt", $(img).attr("alt") + object.name + " " + "etc")
+      .attr("title", $(img).attr("title") + object.name + " finish this off");
+    $(newItem).find(".taken").html(object.taken);
+    $(newItem).find(".capacity").html(object.capacity);
+    $(newItem).find(".value_saved").html(object.value_saved);
+    
+    //Append it
+    $(".newevents").append(newItem);
+
+  });
+}
+$("document").ready(function() {
+  append_json(myData);
+});
