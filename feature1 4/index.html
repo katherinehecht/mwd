@@ -32,14 +32,86 @@
         <md-toolbar>
             <div class="md-toolbar-tools">
                 <div>
-                    <a href="#"><i class="material-icons">home</i></a>
+                    <a href="#"><i class="material-icons">local_drink</i></a>
                 </div>
                 <div>
-                    <a href="/">AngularJS App</a>
+                    <a href="/#/second">Welcome to the Bender!</a>
                 </div>
             </div>
         </md-toolbar>
     </header>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css" rel="stylesheet"/>
+    
+    <div class="newevents">
+
+  <!-- Template for our posts -->
+  <script type="text/template" id="postTemplate">
+    <div class="event">
+      <p class="name"></p>
+      <p class="location">Year:</p>
+      <a class="eventimg" href="">
+        <img class="thumb" alt="MEMBER PROFILE: " title="MEMBER PROFILE: " src="">
+      </a>
+      <!-- Replaced p  with div, can't nest p tags -->
+      <div class="info">
+        <p class="occur_at"></p>
+        <p class="taken"></p>
+        <p class="capacity"></p>
+        <p class="value_saved"></p>
+      </div>
+
+    </div>
+  </script>
+</div>
+    
+    
+    
+    <div class="row">
+        <div class="col m4">
+            <div class="card">
+                <h1>Tailored Jeans</h1>
+                <p class="price">$19.99</p>
+                <p>Some text about the jeans..</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+        <div class="col m4">
+            <div class="card">
+                <h1>Tailored Jeans</h1>
+                <p class="price">$19.99</p>
+                <p>Some text about the jeans..</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+        <div class="col m4">
+            <div class="card">
+                <h1>Tailored Jeans</h1>
+                <p class="price">$19.99</p>
+                <p>Some text about the jeans..</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+        <div class="col m4">
+            <div class="card">
+                <h1>Tailored Jeans</h1>
+                <p class="price">$19.99</p>
+                <p>Some text about the jeans..</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+        <div class="col m4">
+            <div class="card">
+                <h1>Tailored Jeans</h1>
+                <p class="price">$19.99</p>
+                <p>Some text about the jeans..</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <!-- TODO: ADD ROUTING -->
     <div ng-view></div>
