@@ -20,7 +20,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
 
-
     <!-- Angular Material Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
     <script src="app.js"></script>
@@ -35,11 +34,7 @@
                     <a href="#"><i class="material-icons">local_drink</i></a>
                 </div>
                 <div>
-<<<<<<< HEAD:feature1 4/index.html
-                    <a href="/#/second">Welcome to the Bender!</a>
-=======
                     <a href="/#/deals">Deals</a>
->>>>>>> 5914dfdc1e27ae675aaa9f2f00b2ba35fd76a2a2:feature_1/index.html
                 </div>
             </div>
         </md-toolbar>
@@ -49,87 +44,15 @@
     
     <div class="newevents">
 
-  <!-- Template for our posts -->
-  <script type="text/template" id="postTemplate">
-    <div class="event">
-      <p class="name"></p>
-      <p class="location">Year:</p>
-      <a class="eventimg" href="">
-        <img class="thumb" alt="MEMBER PROFILE: " title="MEMBER PROFILE: " src="">
-      </a>
-      <!-- Replaced p  with div, can't nest p tags -->
-      <div class="info">
-        <p class="occur_at"></p>
-        <p class="taken"></p>
-        <p class="capacity"></p>
-        <p class="value_saved"></p>
-      </div>
-
-    </div>
-  </script>
 </div>
-    
-    
-    
-    <div class="row">
-        <div class="col m4">
-            <div class="card">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Some text about the jeans..</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
-        <div class="col m4">
-            <div class="card">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Some text about the jeans..</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
-        <div class="col m4">
-            <div class="card">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Some text about the jeans..</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
-        <div class="col m4">
-            <div class="card">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Some text about the jeans..</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
-        <div class="col m4">
-            <div class="card">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Some text about the jeans..</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
-    </div>
 
+<!--TODO-->
+<div class="container">
+    <div ng-view> </div>
 
-
-
-    <!--TODO-->
-    <div class="container">
-        <!--MainController-->
-        <div ng-controller="MainController">
-            <div ng-view> </div>
-        </div>
-
-        <!--DealsController-->
-        <div ng-controller="DealsController">
-            <div ng-view> </div>
-
-        </div>
-    </div>
+</div>
+   
+   
 </body>
 
 </html>

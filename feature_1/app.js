@@ -1,28 +1,28 @@
-angular.module('app', ['ngMaterial', 'ngRoute', 'ngController']);
+var app = angular.module('app', ['ngMaterial', 'ngRoute']);
 
 // Config
-angular.module('app').config(function ($routeProvider, $locationProvider) {
+app.config(function ($routeProvider, $locationProvider) {
 
     $locationProvider.hashPrefix('')
 
     $routeProvider
         .when('/', {
-            templateUrl: 'pages/home.html',
+            templateUrl: './pages/home.html',
             controller: 'MainController'
         })
         .when('/deals', {
-            templateUrl: 'pages/deals.html',
+            templateUrl: './pages/deals.html',
             controller: 'DealsController'
         })
         .otherwise({
-            templateUrl: 'pages/home.html',
+            templateUrl: './pages/home.html',
             controller: 'MainController'
         })
-})
+});
 
 // CONTROLLERS
 // MainController
-angular.module('app').controller('MainController', ['$scope', 'apiService', '$http',function ($scope, apiService, $http) {
+app.controller('MainController', ['$scope', 'apiService', '$http',function($scope, apiService, $http) {
     const data = {
         american: ['pizza', 'katherine', 'hotdogs'],
         desserts: ['ice cream', 'waffles']
@@ -31,7 +31,7 @@ angular.module('app').controller('MainController', ['$scope', 'apiService', '$ht
 }]);
 
 // DealsController
-angular.module('app').controller('DealsController', ['$scope','apiService', '$http', function ($scope, apiService, $http) {
+app.controller('DealsController', ['$scope','apiService', '$http', function($scope, apiService, $http) {
     const data = {
         american: ['pizza', 'katherine', 'hotdogs'],
         desserts: ['ice cream', 'waffles']
@@ -41,9 +41,9 @@ angular.module('app').controller('DealsController', ['$scope','apiService', '$ht
 
 
 // SERVICE
-angular.module('app').service('apiService', ['$http', function($http){
+app.service('apiService', ['$http', function($http){
     var self = this;
-    $http.get(‘/apiService’)//TODO: input path to JSON here
+    $http.get('/apiService')//TODO: input path to JSON here
         .success(function(result){
             $scope.rules = result;
         })
