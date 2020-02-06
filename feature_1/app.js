@@ -31,24 +31,32 @@ app.controller('MainController', ['$scope', 'apiService', '$http',function($scop
 }]);
 
 // DealsController
-app.controller('DealsController', ['$scope','apiService', '$http', function($scope, apiService, $http) {
-    const data = {
-        american: ['pizza', 'katherine', 'hotdogs'],
-        desserts: ['ice cream', 'waffles']
-    }
-    $scope.data = data;
+app.controller('DealsController', ['$scope','apiService', '$http', function ($scope, apiService, $http) {
+    
+    // call service
+    apiService.getData().then(function(d){
+        $scope.data = d;
+    });
 }]);
 
 
 // SERVICE
-app.service('apiService', ['$http', function($http){
-    var self = this;
-    $http.get('/apiService')//TODO: input path to JSON here
-        .success(function(result){
-            $scope.rules = result;
-        })
-        .error(function (data, status){
-             console.log(data);
-        });
+app.service('apiService', ['$scope', '$http', function($http, $scope){
+    var apiService = {
+        getData: function(){    
+            // $http returns a promise
+            var promise = $http.get('data.json')
+                //then also returns a promise
+                .then(function(result){
+                    console.log(result);
+                    return result.data;
+                })
+                // catch errors
+                .catch(function(data){
+                    console.log(data);
+                });
+            return promise;
+        }
+    };
+    return apiService;
 }]);
-
