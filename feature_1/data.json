@@ -1,4 +1,4 @@
-var mtData = [{
+var myData = {
 		"name": "25 cent wings",
 		"location": "Brother’s",
 		"description": "Come in this Wednesday at 9 pm to save major $$ on our delicious wings. 6 flavors to choose from!",
@@ -28,38 +28,3 @@ var mtData = [{
 		"capacity": 1000,
 		"value_saved": 300
 	}
-];
-
-function append_json(data) {
-    //Set Up the template
-  var s = $("#postTemplate")[0].innerHTML.trim();
-  var holder = document.createElement('div');
-  holder.innerHTML = s;
-  var template = holder.childNodes;
-
-  var event = document.getElementById('newevents');
-  data.forEach(function(object) {
-
-    //Clone Template
-    var newItem = $(template).clone();
-
-    //Populate it
-    $(newItem).find(".name").html(object.name);
-    $(newItem).find(".location").html($(newItem).find(".location").html() + " " + object.location);
-    $(newItem).find(".description").attr("href", object.description);
-    $(newItem).find(".occur_at").html(object.occur_at);
-    var img = $(newItem).find(".thumb")
-    $(img).attr("src", object.eventimg).attr("alt", $(img).attr("alt") + object.name + " " + "etc")
-      .attr("title", $(img).attr("title") + object.name + " finish this off");
-    $(newItem).find(".taken").html(object.taken);
-    $(newItem).find(".capacity").html(object.capacity);
-    $(newItem).find(".value_saved").html(object.value_saved);
-    
-    //Append it
-    $(".newevents").append(newItem);
-
-  });
-}
-$("document").ready(function() {
-  append_json(myData);
-});
