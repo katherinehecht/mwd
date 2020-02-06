@@ -37,11 +37,13 @@ app.controller('DealsController', ['$scope','apiService', '$http', function ($sc
     apiService.getData().then(function(d){
         $scope.data = d;
     });
+    $scope.deals = $scope.data["deals"];
+    
 }]);
 
 
 // SERVICE
-app.service('apiService', ['$scope', '$http', function($http, $scope){
+app.service('apiService', ['$http', function($http){
     var apiService = {
         getData: function(){    
             // $http returns a promise
@@ -49,7 +51,7 @@ app.service('apiService', ['$scope', '$http', function($http, $scope){
                 //then also returns a promise
                 .then(function(result){
                     console.log(result);
-                    return result.data;
+                    return result;
                 })
                 // catch errors
                 .catch(function(data){
