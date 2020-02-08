@@ -1,19 +1,25 @@
-<h3> Events </h3>
-<p>{{deals}}</p>
+<h3>Events Near You</h3>
 
+<!-- TODO: make into a grid of these cards instead of one big list -->
 <ul>
     <li ng-repeat="deal in deals">
-        {{ deal.name }}
-    
+        <md-card >
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">{{deal.name}}</span>
+                <span class="md-subhead">{{deal.description}}</span>
+                <span class="md-subhead">@{{deal.location}}</span>
+              </md-card-title-text>
+              <md-card-title-media>
+                  <div class="md-media-lg card-media"> 
+                      <img src={{deal.img}}> 
+                  </div>
+              </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+              <md-button>Add to Wallet</md-button>
+            </md-card-actions>
+        </md-card>
+               
     </li> 
 </ul>
-    <div class="row">
-        <div class="col m4">
-            <div class="card">
-                <h1>Tailored Jeans</h1>
-                <p class="price">$19.99</p>
-                <p>Some text about the jeans..</p>
-                <p><button>Add to Cart</button></p>
-            </div>
-        </div>
-    </div>
