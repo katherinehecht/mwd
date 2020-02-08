@@ -14,6 +14,10 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: './pages/deals.html',
             controller: 'DealsController'
         })
+        .when('/wallet', {
+            templateUrl: './pages/wallet.html',
+            controller: 'DealsController'
+        })
         .otherwise({
             templateUrl: './pages/home.html',
             controller: 'MainController'
@@ -35,9 +39,16 @@ app.controller('DealsController', ['$scope','apiService', '$http', function ($sc
     
     // call service
     apiService.getData().then(function(d){
-        $scope.data = d;
+        $scope.data = d["data"];
+        
+        $scope.deals = $scope.data["deals"];
+        console.log("scope.deals");
+        console.log($scope.deals);
+        
+        
+        
     });
-    $scope.deals = $scope.data["deals"];
+
     
 }]);
 
@@ -50,6 +61,7 @@ app.service('apiService', ['$http', function($http){
             var promise = $http.get('data.json')
                 //then also returns a promise
                 .then(function(result){
+                    console.log("Result of get request:");
                     console.log(result);
                     return result;
                 })

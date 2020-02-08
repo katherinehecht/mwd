@@ -30,17 +30,26 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css" rel="stylesheet"/>
     
     <header>
-        <md-toolbar>
+        <md-toolbar  md-elevation="1">
             <div class="md-toolbar-tools">
-                <div>
-                    <a href="#"><i class="material-icons">local_drink</i>Welcome to the Bender!</a>
-                </div>
-                <div>
-                    <a href="/#/deals">Deals</a>
+                <h3 class="md-title">
+                    <a href="#"><i class="material-icons">local_drink</i>beNDer</a>
+                </h3>
+                
+                <div class="md-toolbar-section-end">
+                    <md-button>
+                        <a href="/#/deals">Explore Deals</a>
+                    </md-button>
+                    <md-button>
+                        <a href="/#/wallet">My Wallet</a>
+                    </md-button>
                 </div>
             </div>
         </md-toolbar>
     </header>
+    
+    
+    <!-- THIS IS WHERE INDIVIDUAL HTML PAGES ARE LOADED -->
     <div class="container">
         <div ng-view> </div>
 
