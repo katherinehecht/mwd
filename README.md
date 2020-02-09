@@ -1,2 +1,1 @@
 # mwd
-# Katherine Hecht
