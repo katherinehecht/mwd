@@ -1,10 +1,11 @@
-Feature 1
-February 11, 2019
-Netids: khecht, mcresap2, dbozzo, sshin1
-Names: Katherine Hecht, Libby(Maria) Cresap, Dominic Bozzo, Andy Shin
-
-Overview:
-
+<h1>Feature 1</h1>
+<p>
+February 11, 2019 <br>
+Netids: khecht, mcresap2, dbozzo, sshin1 <br>
+Names: Katherine Hecht, Libby(Maria) Cresap, Dominic Bozzo, Andy Shin <br>
+</p>
+<h2>Overview:</h2>
+<p>
 Two Views and Routing
 
   1. Routing setup in config
@@ -31,3 +32,4 @@ Custom Service
     - When users add a deal to their wallet, a toast appears alerting them that the deal has been added
     - Also, the deal will disappear from the main event page when a user adds to their wallet
     - User can see the amount saved based off of deals added to their wallet
+<p>
