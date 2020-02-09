@@ -1,2 +1,29 @@
-<h1> This is your wallet </h1>
-<h2> hooray </h2>
+<h3> Your Wallet: </h3>
+
+
+<!-- TODO: make into a grid of these cards instead of one big list -->
+<ul>
+    <li ng-repeat="deal in wallet" ng-if="deal.valid===1">
+        <md-card >
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">{{deal.name}}</span>
+                <span class="md-subhead">{{deal.description}}</span>
+                <span class="md-subhead">@{{deal.location}}</span>
+                <span class="md-subhead">Value saved: {{deal.value_saved}}</span>
+              </md-card-title-text>
+              <md-card-title-media>
+                  <div class="md-media-lg card-media"> 
+                      <img src={{deal.img}}> 
+                  </div>
+              </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+              <md-button ng-click="removeFromWallet(0, deal)">Remove from Wallet</md-button>
+            </md-card-actions>
+        </md-card>
+               
+    </li> 
+</ul>
+
+<p>The value in your wallet is: {{wallet_value}}</p>
