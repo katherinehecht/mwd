@@ -1,4 +1,4 @@
-#Feature 2
+##Feature 2
 <p>
 February 25, 2020 <br>
 Netids: khecht, mcresap2, dbozzo, sshin1 <br>
