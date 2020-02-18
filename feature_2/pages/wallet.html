@@ -1,8 +1,9 @@
-<h3>Events Near You</h3>
+<h3> Your Wallet: </h3>
+
 
 <!-- TODO: make into a grid of these cards instead of one big list -->
 <ul>
-    <li ng-repeat="deal in deals" ng-if="deal.valid===1">
+    <li ng-repeat="deal in wallet" ng-if="deal.valid===1">
         <md-card >
             <md-card-title>
               <md-card-title-text>
@@ -18,9 +19,11 @@
               </md-card-title-media>
             </md-card-title>
             <md-card-actions layout="row" layout-align="end center">
-              <md-button ng-click="addToWallet(0, deal)">Add to Wallet</md-button>
+              <md-button ng-click="removeFromWallet(0, deal)">Remove from Wallet</md-button>
             </md-card-actions>
         </md-card>
                
     </li> 
 </ul>
+
+<p>The value in your wallet is: {{wallet_value}}</p>
