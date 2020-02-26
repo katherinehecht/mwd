@@ -1,6 +1,7 @@
 {
     "deals":[
         {
+            "deal_id": 1,
             "name": "25 cent wings",
             "location": "Brother’s",
             "description": "Come in this Wednesday at 9 pm to save major $$ on our delicious wings. 6 flavors to choose from!",
@@ -12,6 +13,7 @@
             "valid": 1
         },
         {
+            "deal_id": 2,
             "name": "$2 cover before 10 pm",
             "location": "CJ’s",
             "description": "Come in before 10:00 pm on Thursday 2/27 for $2 Cover!",
@@ -23,6 +25,7 @@
             "valid": 1
         },
         {
+            "deal_id": 3,
             "name": "Buy One Get One Blue Moon",
             "location": "Corby’s",
             "description": "You won't see deals like this at Finnies...come with friends this Friday to share some Blue Moons!",
@@ -34,6 +37,7 @@
             "valid": 1
         },
         {
+            "deal_id": 4,
             "name": "25 cent wings",
             "location": "Brother’s",
             "description": "Come in this Wednesday at 9 pm to save major $$ on our delicious wings. 6 flavors to choose from!",
@@ -45,6 +49,7 @@
             "valid": 1
         },
         {
+            "deal_id": 5,
             "name": "$2 cover before 10 pm",
             "location": "CJ’s",
             "description": "Come in before 10:00 pm on Thursday 2/27 for $2 Cover!",
@@ -56,6 +61,7 @@
             "valid": 1
         },
         {
+            "deal_id": 6,
             "name": "Buy One Get One Blue Moon",
             "location": "Corby’s",
             "description": "You won't see deals like this at Finnies...come with friends this Friday to share some Blue Moons!",
@@ -69,6 +75,7 @@
     ],
     "wallets": {"0": [
         {
+            "deal_id": 1,
             "name": "$2 cover before 10 pm",
             "location": "CJ’s",
             "description": "Come in before 10:00 pm on Thursday 2/27 for $2 Cover!",
@@ -80,6 +87,7 @@
             "valid": 1
         },
         {
+            "deal_id": 2,
             "name": "Buy One Get One Blue Moon",
             "location": "Corby’s",
             "description": "You won't see deals like this at Finnies...come with friends this Friday to share some Blue Moons!",

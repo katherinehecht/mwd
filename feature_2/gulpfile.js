@@ -10,7 +10,7 @@ var gulp = require('gulp'),
     stripDebug = require('gulp-strip-debug'),
     replace = require('gulp-replace'),
     templateCache = require('gulp-angular-templatecache'),
-    // plumber = require('gulp-plumber'),
+    plumber = require('gulp-plumber'),
     connect = require('gulp-connect'),
     gulpif = require('gulp-if'),
     wrap = require('gulp-wrap'),
@@ -120,7 +120,7 @@ gulp.task('modules', ['templates'], () => {
     gulp
         .src(modules.map(item => 'node_modules/' + item))
         .pipe(gulpif(argv.deploy, stripDebug()))
-        // .pipe(plumber())
+        .pipe(plumber())
         .pipe(gulpif(!argv._.length, sourcemaps.init({
             loadMaps: true
         })))
@@ -152,7 +152,7 @@ gulp.task('scripts', ['modules'], function () {
     gulp
         .src(['src/app/**/*.module.js', scripts, './templates.js'])
         .pipe(gulpif(argv.deploy, stripDebug()))
-        // .pipe(plumber())
+        .pipe(plumber())
         .pipe(gulpif(!argv._.length, sourcemaps.init({
             loadMaps: true
         })))
