@@ -17,6 +17,7 @@ angular
                 resolve: {
                     data: function (ExploreService) {
                         return ExploreService.getData();
+                        
                     }
                 }
             });   

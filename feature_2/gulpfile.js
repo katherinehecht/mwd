@@ -173,6 +173,14 @@ gulp.task('scripts', ['modules'], function () {
         .pipe(gulp.dest('.')); //Write the file back to the same spot.
 });
 
+// copy json files
+gulp.task('copy-json', function () {
+    return gulp
+        .src('src/*.json')
+        .pipe(gulp.dest(dist));
+});
+
+
 // copy html files
 gulp.task('copy-html', function () {
     return gulp
@@ -206,9 +214,9 @@ gulp.task('connect-app', function () {
 });
 
 gulp.task('default', ['clean'], function (callback) {
-    runSequence('scripts', 'styles', 'copy-html', 'copy-img', 'copy-fonts', 'connect-app', 'watch', callback);
+    runSequence('scripts', 'styles', 'copy-json', 'copy-html', 'copy-img', 'copy-fonts', 'connect-app', 'watch', callback);
 });
 
 gulp.task('production', ['clean'], function (callback) {
-    runSequence('scripts', 'styles', 'copy-html', 'copy-img', 'copy-fonts', callback);
+    runSequence('scripts', 'styles', 'copy-json', 'copy-html', 'copy-img', 'copy-fonts', callback);
 });
