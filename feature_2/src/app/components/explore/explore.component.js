@@ -33,6 +33,11 @@ var explore = {
             //         console.log('Toast failed or was forced to close early by another toast.');
             // });
         };
+        this.goToDeal = function(deal){
+            $state.go('deal', {
+                deal_id: deal.id 
+            });
+        };
     }
 };
 
