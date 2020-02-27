@@ -1,5 +1,13 @@
 var app = {
-    templateUrl: './app.html'
+    templateUrl: './app.html',
+    bindings: {
+      data: '<'
+    },
+    controller: function () {
+      this.updateData = function (event) {
+        this.data = event.data;
+      };
+	}
   };
   
   angular
@@ -10,6 +18,11 @@ var app = {
         .state('app', {
           redirectTo: 'home',
           url: '/app',
-          component: 'app'
+          component: 'app',
+          resolve: {
+            data: function (AppService) {
+                return AppService.getData();
+            }
+          }
         })
     });

@@ -1,12 +1,12 @@
-function ExploreService($http) {
+function AppService($http) {
     var ctrl = this;
     ctrl.deals = [];
 	this.getData = function () {
 		return $http
 			.get('./data.json')
 			.then(function (res) {
+                console.log(res);
                 return res.data;
-                ctrl.deals = res;
 			})
             .catch(function(data){
                 console.log(data);
@@ -15,5 +15,5 @@ function ExploreService($http) {
 }
 
 angular
-	.module('components.explore')
-	.service('ExploreService', ExploreService);
+	.module('common')
+	.service('AppService', AppService);
