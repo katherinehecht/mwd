@@ -32,6 +32,6 @@
   },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.25",
-    "@uirouter/visualizer": "^4.0.0",
+    "@uirouter/visualizer": "^4.0.0"
   }
 }
