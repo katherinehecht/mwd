@@ -17,7 +17,6 @@ var explore = {
 				}
 			});
         };
-        
         this.addToWallet = function (userId, deal) {
             this.data['wallets'][0].push(angular.copy(deal));
             deal.valid =0;
@@ -35,8 +34,11 @@ var explore = {
         };
         this.goToDeal = function(deal){
             $state.go('deal', {
-                deal_id: deal.id 
+                deal_id: deal.deal_id,
             });
+            //this.deal_id = deal.deal_id;
+            //console.log("deal id");
+            //console.log(deal.deal_id);
         };
     }
 };
