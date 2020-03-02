@@ -1,4 +1,5 @@
 var deal = {
+    templateUrl:'./deal.html',
 	controller: function ($state) {
 		this.renderDeal = function () {
 			$state.go('deal', {

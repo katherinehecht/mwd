@@ -4,7 +4,7 @@ var explore = {
         data: '<',
         onUpdate: '&'
     },
-    controller: function() {
+    controller: function($state) {
         this.$onChanges = function (changes) {
 			if (changes.data) {
 				this.data = angular.copy(this.data);

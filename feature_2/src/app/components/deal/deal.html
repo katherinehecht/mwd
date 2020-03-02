@@ -1,6 +1,20 @@
-
-<div class="app">
-    <div class="deal">
-hello
+<div class='app'>
+    <div class='deal'>
+        <h1>Deal</h1>
+            <md-card >
+                <md-card-title>
+                <md-card-title-text>
+                        <span class="md-headline">{{deal.name}}</span>
+                        <span class="md-subhead">{{deal.description}}</span>
+                        <span class="md-subhead">@{{deal.location}}</span>
+                        <span class="md-subhead">Value saved: {{deal.value_saved}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-lg card-media"> 
+                            <img src={{deal.img}}> 
+                        </div>
+                    </md-card-title-media>
+                    </md-card-title>
+            </md-card>
     </div>
 </div>

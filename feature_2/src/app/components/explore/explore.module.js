@@ -1,4 +1,4 @@
 angular
     .module('components.explore', [
-        'ui.router'
+        'ui.router',
     ]);
