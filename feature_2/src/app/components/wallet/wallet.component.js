@@ -22,17 +22,16 @@ var wallet = {
         };
         
         //remove from wallet. will eventually make a database call
-        this.removeFromWallet = function (userId, deal) {
-
+        this.removeFromWallet = function (deal) {
+            deal.deal.valid =0;
             // update array element to get it back on explore
             angular.forEach(this.data['deals'], function(value, key){
-                if (value.deal_id === deal.deal_id){
+                if (value.deal_id === deal.deal.deal_id){
                     value.valid = 1;
                     console.log(value);
                 }
             });
             //update reference so it doesnt show in wallet
-            deal.valid =0;
             this.updateUser();
         
         };
@@ -42,7 +41,8 @@ var wallet = {
 angular
     .module('components.wallet')
     .component('wallet', wallet)
-    .config(function($stateProvider) {
+    .config(function($stateProvider,$locationProvider) {
+        $locationProvider.hashPrefix('');
         $stateProvider
             .state('wallet', {
                 parent: 'app',

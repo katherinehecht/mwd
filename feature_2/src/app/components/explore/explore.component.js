@@ -21,16 +21,27 @@ var explore = {
         };
 
         //add deal to your wallet. will eventually be a database call
-        this.addToWallet = function (userId, deal) {
-            this.data['wallets'][0].push(angular.copy(deal));
-            deal.valid =0;
+        this.addToWallet = function (deal) {
+            console.log("hello");
+            console.log(deal.deal.valid);
+            this.data['wallets'][0].push(angular.copy(deal.deal));
+            angular.forEach(this.data['deals'], function(value, key){
+                if (value.deal_id === deal.deal.deal_id){
+                    value.valid = 0;
+                    
+                    console.log(value);
+                }
+            });
+            console.log(deal.deal.valid);
+            this.data['wallets'][0].push(angular.copy(deal.deal));
+            // deal.valid =0;
             this.updateUser();
            
         };
         //go to new component
         this.goToDeal = function(deal){
             $state.go('deal', {
-                deal_id: deal.deal_id,
+                deal_id: deal.deal.deal_id,
             });
         };
     }
@@ -39,7 +50,8 @@ var explore = {
 angular
     .module('components.explore')
     .component('explore', explore)
-    .config(function($stateProvider) {
+    .config(function($stateProvider,$locationProvider) {
+        $locationProvider.hashPrefix('');
         $stateProvider
             .state('explore', {
                 parent: 'app',

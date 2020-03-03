@@ -5,7 +5,8 @@ var home = {
 angular
     .module('components.home')
     .component('home', home)
-    .config(function($stateProvider) {
+    .config(function($stateProvider,$locationProvider) {
+        $locationProvider.hashPrefix('');
         $stateProvider
             .state('home', {
                 parent: 'app',

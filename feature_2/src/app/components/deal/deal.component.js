@@ -27,7 +27,8 @@ var deal = {
 angular
 	.module('components.deal')
 	.component('deal', deal)
-	.config(function ($stateProvider) {
+	.config(function ($stateProvider,$locationProvider) {
+        $locationProvider.hashPrefix('');
 		$stateProvider
 			.state('deal', {
                 parent: 'app',
