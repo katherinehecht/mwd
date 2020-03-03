@@ -3,11 +3,12 @@ var home = {
 };
 
 angular
-    .module('home')
+    .module('components.home')
     .component('home', home)
-    .config(function($stateProvider, $urlRouteProvider) {
+    .config(function($stateProvider) {
         $stateProvider
             .state('home', {
+                parent: 'app',
                 url: '/home',
                 component: 'home'
             });   

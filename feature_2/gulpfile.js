@@ -31,8 +31,9 @@ var argv = yargs.argv,
     productionServerURL = '',
     templates = ['src/app/**/*.html'],
     modules = ['@uirouter/angularjs/release/angular-ui-router.js',
-    'parse/dist/parse.min.js',
-    'angular-parse/angular-parse.js',
+    '@uirouter/visualizer/bundles/visualizer.min.js'
+    // 'parse/dist/parse.min.js',
+    // 'angular-parse/angular-parse.js',
   ]; // these are 3rd party libraries in the node_modules folder NOT *.module.js files
 
 /* utility function to generate Unix DateTime Stamp */
@@ -110,7 +111,7 @@ gulp.task('modules', ['templates'], () => {
     return gulp.src(modules.map(item => 'node_modules/' + item))
         .pipe(concat('vendor.js'))
         .pipe(gulpif(argv.deploy, uglify()))
-        .pipe(plumber())
+        // .pipe(plumber())
         .pipe(gulp.dest(dist + '/js/'));
 });
 gulp.task('modules', ['templates'], () => {
@@ -172,6 +173,14 @@ gulp.task('scripts', ['modules'], function () {
         .pipe(gulp.dest('.')); //Write the file back to the same spot.
 });
 
+// copy json files
+gulp.task('copy-json', function () {
+    return gulp
+        .src('src/*.json')
+        .pipe(gulp.dest(dist));
+});
+
+
 // copy html files
 gulp.task('copy-html', function () {
     return gulp
@@ -205,9 +214,9 @@ gulp.task('connect-app', function () {
 });
 
 gulp.task('default', ['clean'], function (callback) {
-    runSequence('scripts', 'styles', 'copy-html', 'copy-img', 'copy-fonts', 'connect-app', 'watch', callback);
+    runSequence('scripts', 'styles', 'copy-json', 'copy-html', 'copy-img', 'copy-fonts', 'connect-app', 'watch', callback);
 });
 
 gulp.task('production', ['clean'], function (callback) {
-    runSequence('scripts', 'styles', 'copy-html', 'copy-img', 'copy-fonts', callback);
+    runSequence('scripts', 'styles', 'copy-json', 'copy-html', 'copy-img', 'copy-fonts', callback);
 });
