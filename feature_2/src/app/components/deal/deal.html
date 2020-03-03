@@ -7,7 +7,9 @@
                         <span class="md-headline">{{$ctrl.data['deals'][$ctrl.list].name}}</span>
                         <span class="md-subhead">{{$ctrl.data['deals'][$ctrl.list].description}}</span>
                         <span class="md-subhead">@{{$ctrl.data['deals'][$ctrl.list].location}}</span>
-                        <span class="md-subhead">Value saved: {{$ctrl.data['deals'][$ctrl.list].value_saved}}</span>
+                        <span class="md-subhead">Value saved with this deal: {{$ctrl.data['deals'][$ctrl.list].value_saved}}</span>
+                        <span class="md-headline">Event Capacity: {{$ctrl.data['deals'][$ctrl.list].capacity}}</span>
+                        <span class="md-headline">Quantity remaining to be claimed: {{$ctrl.data['deals'][$ctrl.list].capacity -$ctrl.data['deals'][$ctrl.list].taken }}</span>
                     </md-card-title-text>
                     <md-card-title-media>
                         <div class="md-media-lg card-media"> 

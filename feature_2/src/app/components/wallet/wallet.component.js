@@ -5,11 +5,14 @@ var wallet = {
         onUpdate: '&'
     },
     controller: function() {
+        // respond to changes in parent data
         this.$onChanges = function (changes) {
 			if (changes.data) {
 				this.data = angular.copy(this.data);
 			}
-		};
+        };
+        
+        // update parent about data update
 		this.updateUser = function () {
 			this.onUpdate({
 				$event: {
@@ -18,6 +21,7 @@ var wallet = {
 			});
         };
         
+        //remove from wallet. will eventually make a database call
         this.removeFromWallet = function (userId, deal) {
 
             // update array element to get it back on explore
@@ -30,15 +34,7 @@ var wallet = {
             //update reference so it doesnt show in wallet
             deal.valid =0;
             this.updateUser();
-            // $mdToast.show(
-            //     $mdToast.simple()
-            //         .textContent('Added ' + deal.name + ' to wallet!')
-            //         .hideDelay(3000))
-            //     .then(function() {
-            //         console.log('Toast dismissed.');
-            //     }).catch(function() {
-            //         console.log('Toast failed or was forced to close early by another toast.');
-            // });
+        
         };
     }
 };
