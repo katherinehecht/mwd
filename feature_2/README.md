@@ -12,6 +12,7 @@ Gulp <br>
 Component Architecture<br>
   1. Component Tree Diagrams<br>
    - Google slide: https://docs.google.com/presentation/d/1dHkRRw446H5Bf-SIGQDpfMigyXm6jw3ZYtAb9ox_p0Y/edit?usp=sharing
-  2. Components 
+  2. Routed Components 
    - home, explore, deal, wallet
+  3. To Run application, start at the /app extension
 </p>
