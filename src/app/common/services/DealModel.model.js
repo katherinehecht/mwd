@@ -35,11 +35,10 @@ class DealModel {
         })
         .catch(error => Promise.reject(error));
   }
-
   getAllDeals() {
     return new this.Parse.Query()
       .find()
-      .then(result => {
+      .then(resut => {
         this.Parse.defineAttributes(result, this.fields);
         this.data = result;
         console.log("getAllDeals", result)
