@@ -6,7 +6,7 @@ function init($uiRouter){
     Parse.initialize(
     'BCrUQVkk80pCdeImSXoKXL5ZCtyyEZwbN7mAb11f', // This is your Application ID
     '4wPYRKbpTJeCdmFNaS31AiQZ8344aaYubk6Uo8VW' // This is your Javascript key
-    );
+  );
 }
 
 angular
