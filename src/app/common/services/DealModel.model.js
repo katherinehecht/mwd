@@ -51,4 +51,4 @@ class DealModel {
 
 angular
   .module('common')
-  .service('DealModel',DealModel)
+  .service('DealModel',DealModel);

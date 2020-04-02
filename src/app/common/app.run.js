@@ -11,4 +11,4 @@ function init($uiRouter){
 
 angular
     .module('common')
-    .run(init)
+    .run(init);

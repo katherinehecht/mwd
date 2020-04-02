@@ -47,7 +47,7 @@ var explore = {
           this.updateUser();
 
       };
-      
+
       //go to new component
       this.goToDeal = function(deal){
           $state.go('deal', {

@@ -23,7 +23,6 @@ class WalletItemModel {
           return obj;
       }
   }
-<<<<<<< HEAD
 
   getById(id) {
       return new this.Parse.Query(this.New())
@@ -50,8 +49,6 @@ class WalletItemModel {
       .catch(error => Promise.reject(error));
   }
 
-=======
->>>>>>> 89e471cd0c0ae074e1ef2e76eaa24c290b5ea19a
 }
 
 angular
