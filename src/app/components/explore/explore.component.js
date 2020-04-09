@@ -10,6 +10,7 @@ var explore = {
       this.$onInit = function () {
         DealModel.getAllDeals().then(function(results) {
           ctrl.deals = results;
+          console.log(ctrl.deals);
         })
       };
 
