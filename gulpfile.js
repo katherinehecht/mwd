@@ -161,7 +161,7 @@ gulp.task('scripts', ['modules'], function () {
         .pipe(ngAnnotate()) // this adds
         .pipe(gulpif(argv.deploy, uglify()))
         .pipe(gulpif(!argv._.length, sourcemaps.write()))
-        .pipe(gulp.dest(dist + '/js'));
+        .pipe(gulp.dest(dist + '/js')); //outputs the file in js folder
 
     /* must define base so I can overwrite the src file below. Per http://stackoverflow.com/questions/22418799/can-gulp-overwrite-all-src-files
      * so find the script tag with an id of bundle, and replace its src. */

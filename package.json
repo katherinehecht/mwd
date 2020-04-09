@@ -34,6 +34,7 @@
     "@uirouter/angularjs": "^1.0.25",
     "@uirouter/visualizer": "^4.0.0",
     "angular-parse": "^0.2.2",
+    "node-foursquare": "^0.4.6",
     "parse": "^1.11.1"
   }
 }
