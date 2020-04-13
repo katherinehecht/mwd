@@ -4,37 +4,41 @@ var wallet = {
         data: '<',
         onUpdate: '&'
     },
-    controller: function() {
+    controller: function(WalletItemModel) {
+        var ctrl = this;
+
+        this.$onInit = function () {
+
+          WalletItemModel.getAllWalletItems(ctrl.data['curr_user']).then(function(results) {
+            ctrl.items = results;
+            console.log('walletItems for user', ctrl.items);
+          })
+
+        };
         // respond to changes in parent data
         this.$onChanges = function (changes) {
-			if (changes.data) {
-				this.data = angular.copy(this.data);
-			}
+    			if (changes.data) {
+    				this.data = angular.copy(this.data);
+    			}
         };
-        
+
         // update parent about data update
-		this.updateUser = function () {
-			this.onUpdate({
-				$event: {
-					data: this.data
-				}
-			});
-        };
-        
-        //remove from wallet. will eventually make a database call
-        this.removeFromWallet = function (deal) {
-            deal.deal.valid =0;
-            // update array element to get it back on explore
-            angular.forEach(this.data['deals'], function(value, key){
-                if (value.deal_id === deal.deal.deal_id){
-                    value.valid = 1;
-                    console.log(value);
-                }
-            });
-            //update reference so it doesnt show in wallet
-            this.updateUser();
-        
-        };
+  		this.updateUser = function () {
+  			this.onUpdate({
+  				$event: {
+  					data: this.data
+  				}
+  			});
+      };
+
+      //refresh
+      this.refreshPage = function () {
+          console.log('refreshing');
+          WalletItemModel.getAllWalletItems(ctrl.data['curr_user']).then(function(results) {
+            ctrl.items = results;
+            console.log('walletItems for user', ctrl.items);
+          })
+      };
     }
 };
 
@@ -48,5 +52,5 @@ angular
                 parent: 'app',
                 url: '/wallet',
                 component: 'wallet'
-            });   
+            });
 });

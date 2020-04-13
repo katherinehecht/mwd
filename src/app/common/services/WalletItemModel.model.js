@@ -6,13 +6,16 @@ class WalletItemModel {
     this.data = {};
     this.collection = [];
     this.name = 'WalletItem';
-    this.fields = [];
+    this.fields = [
+      'user',
+      'deal'
+    ];
   }
   New(obj) {
       if (angular.isUndefined(obj)) {
-          const parseObject = new this.Parse.Object(this.name)
+          const parseObject = new this.Parse.Object(this.name);
           this.Parse.defineAttributes(parseObject, this.fields);
-          parseObject.deal = new this.Parse.Object(this.DealModel.name)
+          parseObject.deal = new this.Parse.Object(this.DealModel.name);
           this.Parse.defineAttributes(parseObject.deal, this.DealModel.fields);
           parseObject.user = new this.Parse.Object(this.UserModel.name)
           this.Parse.defineAttributes(parseObject.user, this.UserModel.fields);
@@ -38,15 +41,35 @@ class WalletItemModel {
 
   getAllWalletItems(User) {
     return new this.Parse.Query(this.New())
-      .equalTo('User',User)
+      .equalTo('user',User)
       .find( results => {
         results.forEach(result =>
-          this.Parse.defineAttributes(result,this.fields)
+          {
+            this.Parse.defineAttributes(result,this.fields);
+            this.Parse.defineAttributes(result.deal, this.DealModel.fields);
+            this.Parse.defineAttributes(result.user, this.UserModel.fields);
+          }
+          // this.Parse.defineAttributes(result,this.fields);
         );
         this.data = results;
         return Promise.resolve(results);
       })
       .catch(error => Promise.reject(error));
+  }
+
+  // TODO IMPLEMENT FUNCTIONS
+  addWalletItem(deal, user){
+    console.log('adding', deal,' to ', user , ' wallet');
+    const walletItem = this.New();
+    walletItem.user = user;
+    walletItem.deal = deal;
+    console.log(walletItem);
+    return walletItem.save();
+
+  }
+
+  removeWalletItem(item){
+    return item.destroy();
   }
 
 }

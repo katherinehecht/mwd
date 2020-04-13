@@ -1,18 +1,33 @@
 var walletitem = {
     templateUrl: './walletitem.html',
     bindings:{
-        deal: '<',
-        removeWallet: '&'
+        data: '<',
+        item: '<',
+        refreshPage: '&'
     },
-    controller: function() {
-        //call parent remove from wallet
-        this.removeFromWallet = function () {
-			this.removeWallet({
-				$deal: {
-					deal: this.deal
-				}
-			});
+    controller: function(WalletItemModel) {
+        var ctrl = this;
+
+        this.$onInit = function() {
+            console.log(ctrl.item);
+            console.log(ctrl.item.deal);
         };
+
+        this.removeFromWallet = function () {
+
+          console.log('about to remove to wallet:', ctrl.item);
+          WalletItemModel.removeWalletItem(ctrl.item).then((myObject) => {
+            // The object was deleted from the Parse Cloud.
+            console.log('object removed from wallet');
+            this.refreshPage();
+          }, (error) => {
+            // The delete failed.
+            console.log('delete error');
+            // error is a Parse.Error with an error code and message.
+          });
+
+        };
+
     }
 };
 

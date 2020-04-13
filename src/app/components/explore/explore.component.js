@@ -8,10 +8,13 @@ var explore = {
       var ctrl = this;
 
       this.$onInit = function () {
+
         DealModel.getAllDeals().then(function(results) {
           ctrl.deals = results;
-          console.log(ctrl.deals);
+          console.log('deals from explore', ctrl.deals);
+          console.log('single deal from explore init', ctrl.deals[1].attributes);
         })
+
       };
 
       //respond to changes in parent data
@@ -29,26 +32,7 @@ var explore = {
   				}
   			});
       };
-
-        //add deal to your wallet. will eventually be a database call
-      this.addToWallet = function (deal) {
-          console.log("hello");
-          console.log(deal.deal.valid);
-          this.data['wallets'][0].push(angular.copy(deal.deal));
-          angular.forEach(this.data['deals'], function(value, key){
-              if (value.deal_id === deal.deal.deal_id){
-                  value.valid = 0;
-
-                  console.log(value);
-              }
-          });
-          console.log(deal.deal.valid);
-          this.data['wallets'][0].push(angular.copy(deal.deal));
-          // deal.valid =0;
-          this.updateUser();
-
-      };
-
+      
       //go to new component
       this.goToDeal = function(deal){
           $state.go('deal', {

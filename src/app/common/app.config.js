@@ -1,8 +1,8 @@
 function init (ParseProvider) {
     ParseProvider.serverURL = 'https://parseapi.back4app.com'; // This is your Server URL
     ParseProvider.initialize(
-      'BCrUQVkk80pCdeImSXoKXL5ZCtyyEZwbN7mAb11f', // This is your Application ID
-      '4wPYRKbpTJeCdmFNaS31AiQZ8344aaYubk6Uo8VW' // This is your Javascript key
+      'daY7UKXBscge3FaVwlx2Yx8We0OqzXztdYLNpGsD', // This is your Application ID
+      'R2nA2oU87qIXTGWrfMGzFKWh6HqP1Y4Fp9Aci586' // This is your Javascript key
     );
 }
 angular

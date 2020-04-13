@@ -3,24 +3,36 @@ var deal = {
     bindings: {
         list:'<',
         data:'<',
-        onUpdate: '&'        
+        onUpdate: '&'
     },
 	controller: function ($state) {
+        var ctrl = this;
+
+        this.$onInit = function () {
+          console.log(ctrl.list);
+
+        };
+
         //responde to data changes
         this.$onChanges = function (changes) {
-			if (changes.data) {
-				this.data = angular.copy(this.data);
+    			if (changes.data) {
+    				this.data = angular.copy(this.data);
 
-			}           
+    			}
         };
+
         //update parent of changes to data
         this.updateUser = function () {
-			this.onUpdate({
-				$event: {
-                    data: this.data
-				}
-            });
-        };
+  			this.onUpdate({
+  				$event: {
+                      data: this.data
+  				}
+        });
+      };
+
+
+
+
     }
 };
 
@@ -37,10 +49,10 @@ angular
 				params: {
 					deal_id: null
                 },
-                
+
                 // we can use resolve here because we know that the request is local
                 // and will take < 200 ms
-                resolve: {   
+                resolve: {
                     list: function($transition$){
                         return $transition$.params().deal_id;
                     }

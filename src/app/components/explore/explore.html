@@ -2,9 +2,9 @@
     <div class='explore'>
         <titlebar></titlebar>
         <ul>
-            <dealitem ng-repeat="deal in $ctrl.data['deals']" ng-if="deal.valid===1" 
+            <dealitem ng-repeat="deal in $ctrl.deals" data="$ctrl.data"
                 deal="deal" add-wallet="$ctrl.addToWallet($deal)" share-event="$ctrl.goToDeal($deal)">
             </dealitem>
         </ul>
     </div>
-</div> 
+</div>

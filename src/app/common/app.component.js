@@ -1,15 +1,26 @@
 var app = {
-    templateUrl: './app.html',
-    bindings: {
-      data: '<'
-    },
-    controller: function () {
+    templateUrl: './app.html'
+    ,
+    controller: function (UserModel) {
+      var ctrl = this;
+
+      this.$onInit = function () {
+
+        // TODO, add authentication
+        UserModel.login('dom_test', 'dominic').then(function(results) {
+          ctrl.data = {'curr_user': results};
+          console.log('initial get of user', ctrl.data);
+          console.log(ctrl.data['curr_user'].username);
+        });
+
+      };
+
       this.updateData = function (event) {
         this.data = event.data;
       };
-	}
+	   }
   };
-  
+
   angular
     .module('common')
     .component('app', app)
@@ -19,14 +30,6 @@ var app = {
         .state('app', {
           redirectTo: 'home',
           url: '/app',
-          component: 'app',
-
-          // use resolve because we are reading a local json file
-          // this request will complete in < 200ms
-          resolve: {
-            data: function (AppService) {
-                return AppService.getData();
-            }
-          }
+          component: 'app'
         })
     });
