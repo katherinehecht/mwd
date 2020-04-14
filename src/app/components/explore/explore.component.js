@@ -32,11 +32,12 @@ var explore = {
   				}
   			});
       };
-      
+
       //go to new component
       this.goToDeal = function(deal){
+        console.log('intermediate deal', deal, deal.deal.id);
           $state.go('deal', {
-              deal_id: deal.deal.deal_id,
+              deal_id: deal.deal.id,
           });
       };
     }

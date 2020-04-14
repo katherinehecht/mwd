@@ -5,11 +5,17 @@ var deal = {
         data:'<',
         onUpdate: '&'
     },
-	controller: function ($state) {
+	controller: function ($state, DealModel) {
         var ctrl = this;
 
         this.$onInit = function () {
-          console.log(ctrl.list);
+          console.log('all ctrl', ctrl.list);
+          console.log('data', ctrl.data);
+
+          DealModel.getById(ctrl.list).then(function(results) {
+            ctrl.curr_deal = results;
+            console.log('deals from explore', ctrl.curr_deal);
+          })
 
         };
 
