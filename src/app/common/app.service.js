@@ -1,7 +1,7 @@
 function AppService($http) {
     var ctrl = this;
     ctrl.deals = [];
-	this.getData = function () {
+	   this.getData = function () {
 		return $http
 			.get('./data.json')
 			.then(function (res) {

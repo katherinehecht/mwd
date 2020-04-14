@@ -26,6 +26,18 @@ class DealModel {
       }
   }
 
+  getNumDeals(){
+    return new this.Parse.Query(this.New())
+        .count()
+        .then(result => {
+            // console.log('result', result);
+            this.Parse.defineAttributes(result, this.fields);
+            this.data = result;
+            return Promise.resolve(result);
+        })
+        .catch(error => Promise.reject(error));
+  }
+
   getById(id) {
     return new this.Parse.Query(this.New())
         .get(id)
@@ -38,8 +50,10 @@ class DealModel {
         .catch(error => Promise.reject(error));
   }
 
-  getAllDeals() {
+  getAllDeals(limit, page) {
     return new this.Parse.Query(this.New())
+      .limit(limit)
+      .skip(page*limit-limit)
       .find()
       .then(result => {
         // console.log("before anything :", result);
