@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "node-foursquare-venues": "^1.1.0"
+    "mocha": "^7.1.1",
+    "node-fetch": "^2.6.0"
   }
 }
