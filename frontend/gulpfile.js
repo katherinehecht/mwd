@@ -120,7 +120,7 @@ gulp.task('modules', ['templates'], () => {
     gulp
         .src(modules.map(item => 'node_modules/' + item))
         .pipe(gulpif(argv.deploy, stripDebug()))
-        .pipe(plumber())
+        //.pipe(plumber())
         .pipe(gulpif(!argv._.length, sourcemaps.init({
             loadMaps: true
         })))
@@ -152,7 +152,7 @@ gulp.task('scripts', ['modules'], function () {
     gulp
         .src(['src/app/**/*.module.js', scripts, './templates.js'])
         .pipe(gulpif(argv.deploy, stripDebug()))
-        .pipe(plumber())
+        //.pipe(plumber())
         .pipe(gulpif(!argv._.length, sourcemaps.init({
             loadMaps: true
         })))

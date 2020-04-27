@@ -1,8 +1,7 @@
 var home = {
     templateUrl: './home.html'
 };
-var foursquare = require('node-foursquare-venues')('clientId', 'secretId', 'version', 'mode');
-console.log(foursquare.venues);
+
 angular
     .module('components.home')
     .component('home', home)

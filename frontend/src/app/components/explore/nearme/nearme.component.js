@@ -6,20 +6,17 @@ var nearme = {
         shareEvent: '&'
     },
     controller: function($http) {
-      this.$onInit() = function(){
+      this.$onInit = function($http){
         var ctrl = this;
-        var data = {
-
-
-        }
-        $http.post("http://localhost:8001/api/locations", data).then(function(resp){
+        /*
+        $http.post("http://localhost:8882/api/locations", data).then(function(resp){
           var response = resp.data[0];
           console.log('Response Data from API: ' + response);
 
         }, function(resp){
           console.log(resp.statusText);
-        });
-      }
+        });*/
+      };
     }
 };
 
