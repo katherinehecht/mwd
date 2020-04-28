@@ -213,10 +213,18 @@ gulp.task('connect-app', function () {
     });
 });
 
+// comment with ngdocs
+gulp.task('ngdocs', [], function () {
+  var gulpDocs = require('gulp-ngdocs');
+  return gulp.src('src/*.js')
+    .pipe(gulpDocs.process())
+    .pipe(gulp.dest('./docs'));
+});
+
 gulp.task('default', ['clean'], function (callback) {
-    runSequence('scripts', 'styles', 'copy-json', 'copy-html', 'copy-img', 'copy-fonts', 'connect-app', 'watch', callback);
+    runSequence('scripts', 'styles', 'copy-json', 'copy-html', 'copy-img', 'copy-fonts', 'connect-app', 'watch', 'ngdocs', callback);
 });
 
 gulp.task('production', ['clean'], function (callback) {
-    runSequence('scripts', 'styles', 'copy-json', 'copy-html', 'copy-img', 'copy-fonts', callback);
+    runSequence('scripts', 'styles', 'copy-json', 'copy-html', 'copy-img', 'copy-fonts', 'ngdocs', callback);
 });

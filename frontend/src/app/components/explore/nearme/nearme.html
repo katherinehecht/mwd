@@ -1,1 +1,8 @@
-<div>Restaurants Around Me</div>
+<div>
+  <h5> Other Restaurants Around You to explore: Courtesy of foursquare! </h5>
+  <ul class="list-group">
+    <li ng-repeat="venue in $ctrl.venues" class="list-group-item">{{venue.name}} located at <i> {{venue.address}} </i></li>
+  </ul>
+
+
+</div>
