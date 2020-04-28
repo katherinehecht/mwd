@@ -10,7 +10,7 @@ angular
         $stateProvider
             .state('home', {
                 parent: 'app',
-                url: '/home',
+                url: '/',
                 component: 'home'
             });
 });

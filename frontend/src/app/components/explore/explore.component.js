@@ -12,24 +12,17 @@ var explore = {
       ctrl.setPage = setPage;
 
       this.$onInit = function () {
-
-        // DealModel.getAllDeals(ctrl.page_size ,ctrl.curr_page).then(function(results) {
-        //   ctrl.deals = results;
-        //   console.log('deals from explore', ctrl.deals);
-        // })
-        // get total number of deals
+        // load deals to display forom parse
         DealModel.getNumDeals(ctrl.pageSize ,ctrl.curr_page).then(function(results) {
           ctrl.num_deals = results;
           console.log('numdeals', ctrl.num_deals);
           ctrl.setPage(1);
         })
 
-
-
       };
 
       this.refreshPage = function () {
-
+        //refresh deals from parse
         DealModel.getAllDeals(ctrl.pager.pageSize ,ctrl.pager.currentPage).then(function(results) {
           ctrl.deals = results;
           console.log('deals refreshed to page', ctrl.pager.currentPage, ctrl.deals);

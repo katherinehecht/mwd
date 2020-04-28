@@ -13,6 +13,7 @@ router.use((req, res, next) => {
   next();
 });
 
+//example post request
 router.post('/api/locations', (req, res) => {
   // console.log(req);
   const location = req.body.location;
@@ -24,6 +25,7 @@ router.post('/api/locations', (req, res) => {
   console.log("ROUTER POST");
 });
 
+// GET request that we use from our explore page
 router.get('/api/location', (req, res) => {
   const url = 'https://api.foursquare.com/v2/venues/explore?client_secret=CGPC3IXSATYISKB2MKQRJSB40OX3JC1NGH2JWEPISSOI1VHV&client_id=KUQDWHVZC5SVE5HWPUWKPXD0FXDCX4W1V10BIYUQ3HJF40DB&v=20200419&near=South_Bend,In&categoryId=4d4b7105d754a06374d81259';
   fetch(url)
@@ -34,26 +36,3 @@ router.get('/api/location', (req, res) => {
     );
 });
 module.exports = router;
-/*
-request(
-  {
-    url: 'https://api.foursquare.com/v2/venues/explore',
-    method: 'GET',
-    qs: {
-      client_id: 'KUQDWHVZC5SVE5HWPUWKPXD0FXDCX4W1V10BIYUQ3HJF40DB',
-      client_secret: 'MMHS1CW43PKDCVDCN2R3WXBQC20N54MDFPOH2YFN5SPMOTGC',
-      ll: '40.7243,-74.0018',
-      v: '20200419',
-      near: 'South_Bend,IN',
-      category: '4d4b7105d754a06374d81259',
-    },
-  },
-  function(err, res, body) {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log(body);
-    }
-  }
-);
-*/

@@ -29,7 +29,7 @@ var app = {
       $stateProvider
         .state('app', {
           redirectTo: 'home',
-          url: '/app',
+          url: '',
           component: 'app'
         })
     });
