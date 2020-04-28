@@ -1,0 +1,10 @@
+<div class='app'>
+    <div class='wallet'>
+        <h1>Your wallet:</h1>
+        <ul>
+            <walletitem ng-repeat="item in $ctrl.items" data="$ctrl.data"
+            refresh-page="$ctrl.refreshPage()" item="item" remove-wallet="$ctrl.removeFromWallet($deal)">
+            </walletitem>
+        </ul>
+    </div>
+</div>
