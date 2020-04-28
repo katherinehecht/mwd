@@ -14,9 +14,9 @@ router.use((req, res, next) => {
 });
 
 router.post('/api/locations', (req, res) => {
-  console.log(req);
+  // console.log(req);
   const location = req.body.location;
-
+  console.log(location);
   //const schema = {'restaurant': Joi.string().min(3).required()}
 
   const url = 'https://api.foursquare.com/v2/venues/explore?client_secret=CGPC3IXSATYISKB2MKQRJSB40OX3JC1NGH2JWEPISSOI1VHV&client_id=KUQDWHVZC5SVE5HWPUWKPXD0FXDCX4W1V10BIYUQ3HJF40DB&v=20200419&near=' + location + '&categoryId=4d4b7105d754a06374d81259';
