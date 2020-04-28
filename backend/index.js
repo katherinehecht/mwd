@@ -4,7 +4,7 @@ const locations = require('./routes/locations.js');
 
 // instantiate express
 const app = express();
-app.use(express.json());
+app.use('/',locations);
 
 // create new server instance
 const httpServer = require('http')

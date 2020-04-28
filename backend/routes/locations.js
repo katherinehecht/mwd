@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const fetch = require('node-fetch');
 const request = require('request');
 const Joi = require('Joi');
 router.use((req, res, next) => {
@@ -13,11 +14,12 @@ router.use((req, res, next) => {
 });
 
 router.post('/api/locations', (req, res) => {
+  console.log(req);
   const location = req.body.location;
 
   //const schema = {'restaurant': Joi.string().min(3).required()}
 
-  const url = 'https://api.foursquare.com/v2/venues/explore?client_secret=CGPC3IXSATYISKB2MKQRJSB40OX3JC1NGH2JWEPISSOI1VHV&client_id=KUQDWHVZC5SVE5HWPUWKPXD0FXDCX4W1V10BIYUQ3HJF40DB&v=20200419&near=' + schema + '&categoryId=4d4b7105d754a06374d81259';
+  const url = 'https://api.foursquare.com/v2/venues/explore?client_secret=CGPC3IXSATYISKB2MKQRJSB40OX3JC1NGH2JWEPISSOI1VHV&client_id=KUQDWHVZC5SVE5HWPUWKPXD0FXDCX4W1V10BIYUQ3HJF40DB&v=20200419&near=' + location + '&categoryId=4d4b7105d754a06374d81259';
   res.send(url);
   console.log("ROUTER POST");
 });

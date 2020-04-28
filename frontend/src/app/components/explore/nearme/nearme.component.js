@@ -7,13 +7,12 @@ var nearme = {
           'location': 'South_Bend,IN'
         }
 
-        if($http.post("http://localhost:3000/api/locations", data).then(function(response){
-          var responseData = resoponse.data[0];
+        $http.post("http://localhost:3000/api/locations",  JSON.stringify(data)).then(function(response){
+          var responseData = response.data[0];
           console.log('Response Data from API: ' + response);
           ctrl.name = responseData.name;
-        }, function(response){
           console.log(response.statusText);
-        });)
+        });
       };
     }
 };
