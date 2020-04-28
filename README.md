@@ -1,18 +1,13 @@
-<h1>Feature 2</h1>
-March 3, 2020 <br>
+<h1>Feature 3</h1>
+April 27, 2020 <br>
 Netids: khecht, mcresap2, dbozzo, sshin1 <br>
 Names: Katherine Hecht, Libby(Maria) Cresap, Dominic Bozzo, Andy Shin <br>
 </p>
 <h2>Overview:</h2>
 <p> 
-Gulp <br>
-  1. Correctly configure gulp.js file<br>
-   - Found under main directory
-  
-Component Architecture<br>
-  1. Component Tree Diagrams<br>
-   - Google slide: https://docs.google.com/presentation/d/1dHkRRw446H5Bf-SIGQDpfMigyXm6jw3ZYtAb9ox_p0Y/edit?usp=sharing
-  2. Routed Components 
-   - home, explore, deal, wallet
-  3. To Run application, start at the /app extension
+Third Party API <br>
+  1. to run our server that connects to a third party API, navigate to mwd/backend and run the command 'node index.js' to start the express server that responds to requests
+ 
+Parse Integration<br>
+  1. Run app like normal, navigating to /mwd/frontend and typing gulp to start the app and navigate to the home page. Interact at your own whim, now utilizing our Parse server backend to persist activity!
 </p>
