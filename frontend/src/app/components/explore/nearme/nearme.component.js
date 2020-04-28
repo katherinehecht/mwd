@@ -1,21 +1,19 @@
 var nearme = {
     templateUrl: './nearme.html',
-    bindings:{
-        deal: '<',
-        addWallet: '&',
-        shareEvent: '&'
-    },
     controller: function($http) {
-      this.$onInit = function($http){
+      this.$onInit = function(){
         var ctrl = this;
-        /*
-        $http.post("http://localhost:8882/api/locations", data).then(function(resp){
-          var response = resp.data[0];
-          console.log('Response Data from API: ' + response);
+        var data = {
+          'location': 'South_Bend,IN'
+        }
 
-        }, function(resp){
-          console.log(resp.statusText);
-        });*/
+        if($http.post("http://localhost:3000/api/locations", data).then(function(response){
+          var responseData = resoponse.data[0];
+          console.log('Response Data from API: ' + response);
+          ctrl.name = responseData.name;
+        }, function(response){
+          console.log(response.statusText);
+        });)
       };
     }
 };

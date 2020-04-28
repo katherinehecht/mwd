@@ -11,7 +11,7 @@ const httpServer = require('http')
   .createServer(app);
 
 // register user-generated routes
-const port = process.env.PORT || 8882;
+const port = process.env.PORT || 3000;
 
 // listen on server
 httpServer.listen(port, () =>{
