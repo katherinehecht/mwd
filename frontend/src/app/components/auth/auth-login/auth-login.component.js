@@ -18,7 +18,7 @@ const authLogin = {
 angular
   .module("components.auth")
   .component("authLogin", authLogin)
-  .config(($stateProvider) => {
+  .config(($stateProvider, $urlRouterProvider) => {
     $stateProvider
     .state("auth", {
       redirectTo: "auth.login",
