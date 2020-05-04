@@ -1,29 +1,30 @@
 const authRegister = {
-    templateUrl: './auth-register.html',
+    templateUrl: "./auth-register.html",
     controller: ($state, AuthService) =>{
       const ctrl = this;
+
       ctrl.$onInit = () => {
         ctrl.error = null;
         // initialize form data
-        ctrl user = {
-          firstName: '',
-          lastName: '',
-          email: '',
-          password: ''
+        ctrl.user = {
+          firstName: "",
+          lastName: "",
+          email: "",
+          password: ""
         }
       }
       ctrl.createUser = function(event){
-        console.log('event: ', event);
+        console.log("event: ", event);
 
       }
     }
 };
 angular
-  .module('components.auth')
-  .component('auth-register', auth)
+  .module("components.auth")
+  .component("authRegister", authRegister)
   .config(($stateProvider) => {
-    $stateProvider.state('auth.register', {
-      url: '/register',
-      component: 'authRegister'
+    $stateProvider.state("auth.register", {
+      url: "/register",
+      component: "authRegister"
     });
   });

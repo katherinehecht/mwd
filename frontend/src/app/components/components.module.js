@@ -3,6 +3,7 @@ angular
     'components.home',
     'components.explore',
     'components.wallet',
-    'components.deal'
-    
+    'components.deal',
+    'components.auth'
+
   ]);

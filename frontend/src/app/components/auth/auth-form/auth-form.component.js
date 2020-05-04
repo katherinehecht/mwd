@@ -3,13 +3,13 @@ const authForm = {
   // pass text to component to dynamically render text
   bindings: {
     // one way data binding
-    user:'<',
+    user:"<",
     // attribute binding
-    button: '@',
-    message: '@',
-    onSubmit: '&'
+    button: "@",
+    message: "@",
+    onSubmit: "&"
   },
-  templateUrl: './auth-form.html',
+  templateUrl: "./auth-form.html",
   controller: ($state) => {
     const ctrl = this;
     ctrl.submitForm = () => {
@@ -23,5 +23,5 @@ const authForm = {
 }
 
 angular
-  .module('components.auth')
-  .component('authForm', authForm);
+  .module("components.auth")
+  .component("authForm", authForm);
