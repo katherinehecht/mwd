@@ -1,0 +1,103 @@
+{
+    "deals":[
+        {
+            "deal_id": 1,
+            "name": "25 cent wings",
+            "location": "Brother’s",
+            "description": "Come in this Wednesday at 9 pm to save major $$ on our delicious wings. 6 flavors to choose from!",
+            "occur_at": "2020-02-26T21:00:43.511Z",
+            "img": "https://assets.simpleviewinc.com/simpleview/image/upload/crm/denver/It-s-Brothers-Bar-Grill14_fe322371-ab2b-18d4-811dd68cfda23f9e.png",
+            "taken": 0,
+            "capacity": 100,
+            "value_saved": 100,
+            "valid": 1
+        },
+        {
+            "deal_id": 2,
+            "name": "$2 cover before 10 pm",
+            "location": "CJ’s",
+            "description": "Come in before 10:00 pm on Thursday 2/27 for $2 Cover!",
+            "occur_at": "2020-02-27T22:00:43.511Z",
+            "img": "https://roadtips.typepad.com/.a/6a00d8341cad8253ef015435efa89e970c-320wi",
+            "taken": 10,
+            "capacity": 30,
+            "value_saved": 20,
+            "valid": 1
+        },
+        {
+            "deal_id": 3,
+            "name": "Buy One Get One Blue Moon",
+            "location": "Corby’s",
+            "description": "You won't see deals like this at Finnies...come with friends this Friday to share some Blue Moons!",
+            "occur_at": "2020-02-28T18:00:43.511Z",
+            "img": "https://www.corbysirishpub.com/uploads/5/9/8/0/59806829/published/corbys-image-1.png?1534801395",
+            "taken": 700,
+            "capacity": 1000,
+            "value_saved": 300,
+            "valid": 1
+        },
+        {
+            "deal_id": 4,
+            "name": "25 cent wings",
+            "location": "Brother’s",
+            "description": "Come in this Wednesday at 9 pm to save major $$ on our delicious wings. 6 flavors to choose from!",
+            "occur_at": "2020-02-26T21:00:43.511Z",
+            "img": "https://assets.simpleviewinc.com/simpleview/image/upload/crm/denver/It-s-Brothers-Bar-Grill14_fe322371-ab2b-18d4-811dd68cfda23f9e.png",
+            "taken": 0,
+            "capacity": 100,
+            "value_saved": 100,
+            "valid": 1
+        },
+        {
+            "deal_id": 5,
+            "name": "$2 cover before 10 pm",
+            "location": "CJ’s",
+            "description": "Come in before 10:00 pm on Thursday 2/27 for $2 Cover!",
+            "occur_at": "2020-02-27T22:00:43.511Z",
+            "img": "https://roadtips.typepad.com/.a/6a00d8341cad8253ef015435efa89e970c-320wi",
+            "taken": 10,
+            "capacity": 30,
+            "value_saved": 20,
+            "valid": 1
+        },
+        {
+            "deal_id": 6,
+            "name": "Buy One Get One Blue Moon",
+            "location": "Corby’s",
+            "description": "You won't see deals like this at Finnies...come with friends this Friday to share some Blue Moons!",
+            "occur_at": "2020-02-28T18:00:43.511Z",
+            "img": "https://www.corbysirishpub.com/uploads/5/9/8/0/59806829/published/corbys-image-1.png?1534801395",
+            "taken": 700,
+            "capacity": 1000,
+            "value_saved": 300,
+            "valid": 1
+        }
+    ],
+    "wallets": {"0": [
+        {
+            "deal_id": 1,
+            "name": "$2 cover before 10 pm",
+            "location": "CJ’s",
+            "description": "Come in before 10:00 pm on Thursday 2/27 for $2 Cover!",
+            "occur_at": "2020-02-27T22:00:43.511Z",
+            "img": "https://roadtips.typepad.com/.a/6a00d8341cad8253ef015435efa89e970c-320wi",
+            "taken": 10,
+            "capacity": 30,
+            "value_saved": 20,
+            "valid": 1
+        },
+        {
+            "deal_id": 2,
+            "name": "Buy One Get One Blue Moon",
+            "location": "Corby’s",
+            "description": "You won't see deals like this at Finnies...come with friends this Friday to share some Blue Moons!",
+            "occur_at": "2020-02-28T18:00:43.511Z",
+            "img": "https://www.corbysirishpub.com/uploads/5/9/8/0/59806829/published/corbys-image-1.png?1534801395",
+            "taken": 700,
+            "capacity": 1000,
+            "value_saved": 300,
+            "valid": 1
+        }
+        ]
+    }
+}
