@@ -1,3 +1,16 @@
+<a name="0.3"></a>
+## Release [0.3](https://github.com/katherinehecht/mwd/pull/7/files) (2020-03-03) (Feature 2)
+## Added (Feature 3)
+* Added parse database backend for all data requests and persistence
+* integrated node foursquare API to list more venues for users to explore
+## Changes (Feature 3)
+* Re-worked all data requests so that no static data was being loaded anymore
+  * all requests routed through our BACK4APP
+  * pagination integrated into viewing deals
+* Four square node api server written and configured to give back location recommendations in South Bend,IN
+   * response from this request rendered in Explore Feed
+
+
 <a name="0.2"></a>
 ## Release [0.2](https://github.com/katherinehecht/mwd/pull/7/files) (2020-03-03) (Feature 2)
 ## Added (Feature 2)
