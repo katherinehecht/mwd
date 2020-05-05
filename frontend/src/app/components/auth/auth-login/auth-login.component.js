@@ -1,24 +1,23 @@
 const authLogin = {
     templateUrl: "./auth-login.html",
-    controller: ($state, AuthService) =>{
+    controller: function($state, AuthService) {
       const ctrl = this;
-      ctrl.$onInit = () => {
+      ctrl.$onInit = function () {
         ctrl.error = null;
         ctrl.user = {
-          email: "",
+          username: "",
           password: ""
         };
-      }
-      ctrl.createUser = function(event){
-        console.log("event: ", event);
-
-      }
+      };
+      ctrl.loginUser = function(event){
+        return AuthService.logIn(ctrl.user.username, ctrl.user.password);
+      };
     }
 };
 angular
   .module("components.auth")
   .component("authLogin", authLogin)
-  .config(($stateProvider) => {
+  .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state("auth", {
       redirectTo: "auth.login",
