@@ -9,19 +9,26 @@ const authForm = {
     message: '@',
     onSubmit: '&'
   },
-  templateUrl: './auth-form.html',
-  controller: ($state) => {
+  templateUrl: "./auth-form.html",
+  controller: function ($state){
     const ctrl = this;
-    ctrl.submitForm = () => {
+    
+    ctrl.submitForm = function(){
       ctrl.onSubmit({
         $event: {
           user: ctrl.user
         }
       });
     };
+
+    ctrl.$onChanges = function (changes){
+      if (changes.user){
+        ctrl.user = angular.copy(ctrl.user);
+      }
+    };
   }
 }
 
 angular
   .module('components.auth')
-  .component('authForm', authForm);
+  .component("authForm", authForm);

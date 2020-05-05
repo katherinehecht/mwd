@@ -7,22 +7,33 @@
             <md-list>
                 <md-list-item ng-if="$ctrl.button === 'Sign Up & Create Account'" class="">
                     <mdc-text-field required class="auth_textField" label="First Name" outlined="true" dense="isDense" >
-                        <input autofocus required type="text" class="auth_input" name="firstName" ng-model="$ctrl.user.firstName">
+                      <label> First Name: </label>
+                        <input autofocus required type="text" class="auth_input" name="firstName" ng-model="$ctrl.user.firstName" placeholder="first name...">
                     </mdc-text-field>
                 </md-list-item>
                 <md-list-item ng-if="$ctrl.button === 'Sign Up & Create Account'" class="">
                     <mdc-text-field required class="auth_textField" label="Last Name" outlined="true" dense="isDense" >
-                        <input required type="text" class="auth_input" name="lastName" ng-model="$ctrl.user.lastName">
+                      <label> Last Name: </label>
+                        <input required type="text" class="auth_input" name="lastName" ng-model="$ctrl.user.lastName" placeholder="last name...">
+                    </mdc-text-field>
+                </md-list-item>
+                <md-list-item ng-if="$ctrl.button === 'Sign Up & Create Account'" class="">
+                    <mdc-text-field class="auth_textField" label="Email" outlined="true" dense="isDense" ng-class="{'demo-text-field-custom-colors demo-text-field-custom-error-colors': altColors}">
+                        <label> Email: </label>
+                        <input autofocus type="email" class="auth_input" ng-model="$ctrl.user.email" placeholder="email..." required>
                     </mdc-text-field>
                 </md-list-item>
                 <md-list-item>
-                    <mdc-text-field class="auth_textField" label="Email" outlined="true" dense="isDense" ng-class="{'demo-text-field-custom-colors demo-text-field-custom-error-colors': altColors}">
-                        <input autofocus type="email" class="auth_input" ng-model="$ctrl.user.email" required>
+                    <mdc-text-field class="auth_textField" label="Username" outlined="true" dense="isDense" ng-class="{'demo-text-field-custom-colors demo-text-field-custom-error-colors': altColors}">
+                        <label> Username: </label>
+                        <input autofocus type="text" class="auth_input" ng-model="$ctrl.user.username" placeholder="username..." required>
                     </mdc-text-field>
                 </md-list-item>
+
                 <md-list-item>
                     <mdc-text-field class="auth_textField" label="Password" outlined="true" dense="isDense" ng-class="{'demo-text-field-custom-colors demo-text-field-custom-error-colors': altColors}">
-                        <input required type="password" class="auth_input" ng-model="$ctrl.user.password">
+                        <label> Password </label>
+                        <input required type="password" class="auth_input" ng-model="$ctrl.user.password" placeholder="password...">
                     </mdc-text-field>
                     <md-button class="forgot-button" ng-if="$ctrl.button === 'Login'" ng-click="$ctrl.navReset();" style="position: absolute; right:10px; top:35px;">
                         <p class="forgot-text button">FORGOT?</p>

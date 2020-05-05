@@ -1,5 +1,9 @@
 var navbar = {
-    templateUrl: './navbar.html'
+    templateUrl: './navbar.html',
+    bindings : {
+      user: '<',
+      onLogout: '&'
+    }
 };
 
 angular

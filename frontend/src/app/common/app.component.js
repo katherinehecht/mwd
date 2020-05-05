@@ -1,18 +1,20 @@
 var app = {
     templateUrl: './app.html'
     ,
-    controller: function (UserModel) {
+    controller: function ($state, AuthService) {
       var ctrl = this;
+      ctrl.data={};
+      ctrl.user = AuthService.getUser();
+      ctrl.logout = function () {
+        // call logout service
+        AuthService.logOut().then(function() {
+          $state.go('auth.login');
+        })
+      }
 
       this.$onInit = function () {
-
-        // TODO, add authentication
-        UserModel.login('dom_test', 'dominic').then(function(results) {
-          ctrl.data = {'curr_user': results};
-          console.log('initial get of user', ctrl.data);
-          console.log(ctrl.data['curr_user'].username);
-        });
-
+        console.log('APP USER', ctrl.user);
+        ctrl.data = {'curr_user': ctrl.user};
       };
 
       this.updateData = function (event) {
@@ -30,6 +32,9 @@ var app = {
         .state('app', {
           redirectTo: 'home',
           url: '',
-          component: 'app'
+          component: 'app',
+          data: {
+            requiredAuth: true
+          }
         })
     });

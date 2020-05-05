@@ -1,5 +1,5 @@
 <div class="root">
-    <navbar></navbar>
+    <navbar user="$ctrl.user" on-logout="$ctrl.logout();"></navbar>
     <div class="app">
         <div ui-view data="$ctrl.data" on-update="$ctrl.updateData($event);"></div>
     </div>
