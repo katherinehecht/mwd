@@ -10,30 +10,31 @@ class AuthService {
     user.set("email", email);
     // var ret = {};
     user.signUp().then(function success (user) {
-      console.log("signed up:", user);
-    }, function error(err) {
-      console.log("error signing up", err);
+      console.log("Signed up:", user);
       return
-    });
-
+    }, function error(err) {
+      console.log("Error signing up", err);
+      return
+    })
   }
 
   logIn(username, password){
-    this.Parse.User.logIn(username, password).then( function(user){
-      console.log(this.Parse.User.current());
-    });
-
+    return this.Parse.User.logIn(username, password).then(function success (user) {
+      console.log("Logged in: ", user);
+    }), function error(err){
+      console.log("Error logging in: ", err);
+      return
+    }
   }
-
   logOut(){
     this.Parse.User.logOut().then( function(user){
       console.log("logged out");
     });
-  }
+  };
 
 }
 
 
 angular
   .module("components.auth")
-  .service("AuthService",AuthService);
+  .service("AuthService", AuthService);
