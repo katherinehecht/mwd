@@ -1,3 +1,5 @@
+<h1>Feature 2</h1>
+March 3, 2020 <br>
 <h1>Feature 3</h1>
 April 27, 2020 <br>
 Netids: khecht, mcresap, dbozzo, sshin1 <br>
