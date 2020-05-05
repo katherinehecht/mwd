@@ -1,36 +1,82 @@
-class AuthService {
-  constructor(Parse){
-    this.Parse = Parse;
+// class AuthService {
+//   constructor(Parse){
+//     this.Parse = Parse;
+//     this.authData = null;
+//   }
+
+function AuthService(Parse) {
+  var parse = Parse;
+  var authData = null;
+
+  function storeAuthData(response){
+    // this.authData = response;
+    authData=response;
+    console.log('set authData');
+    return response;
   }
 
-  signUp(username, password, email){
-    var user = new this.Parse.User();
+  function clearAuthData(){
+    authData =null;
+  }
+
+  this.signUp = function(username, password, email){
+    var user = new parse.User();
     user.set("username", username);
     user.set("password", password);
     user.set("email", email);
     // var ret = {};
-    user.signUp().then(function success (user) {
+    return user.signUp().then(function success (user) {
       console.log("Signed up:", user);
-      return
+      return storeAuthData(user);
     }, function error(err) {
-      console.log("Error signing up", err);
-      return
+      console.log("Errors signing up", err);
+      return null;
     })
   }
 
-  logIn(username, password){
-    return this.Parse.User.logIn(username, password).then(function success (user) {
-      console.log("Logged in: ", user);
-    }), function error(err){
+  this.logIn= function (username, password){
+    return parse.User.logIn(username, password).then(function success (user) {
+      console.log("Loggeddd in: ", user);
+      return storeAuthData(user);
+    }, function error(err){
       console.log("Error logging in: ", err);
-      return
+      return null;
+    });
+  }
+
+  this.logOut = function(){
+    return parse.User.logOut().then(clearAuthData);
+  };
+
+  this.requireAuthentication = function() {
+    // THIS IS THE FUNCTION I DONT KNOW WHAT TO DO IN
+    return new Promise ( function (resolve, reject) {
+      if (!!authData) {
+        resolve("success")
+      } else {
+        reject("nothing")
+      }
+    });
+  }
+
+  function resolve(nothing){
+    console.log("done");
+  }
+
+  function reject(nothing) {
+    console.log("not done");
+  }
+
+  this.isAuthenticated = function(){
+    return !!authData;
+  }
+
+  this.getUser = function () {
+    if (authData){
+      return authData;
     }
   }
-  logOut(){
-    this.Parse.User.logOut().then( function(user){
-      console.log("logged out");
-    });
-  };
+
 
 }
 

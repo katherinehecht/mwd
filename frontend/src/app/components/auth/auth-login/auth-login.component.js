@@ -10,7 +10,18 @@ const authLogin = {
         };
       };
       ctrl.loginUser = function(event){
-        return AuthService.logIn(ctrl.user.username, ctrl.user.password);
+
+        return AuthService.
+          logIn(event.user.username, event.user.password)
+          .then( function(user) {
+            //success
+            console.log('USER', user);
+            console.log('email', user.email);
+            $state.go('app');
+          }, function (reason) {
+            //failure
+            ctrl.error = reason.message;
+          });
       };
     }
 };

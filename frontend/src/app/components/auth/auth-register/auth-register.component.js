@@ -13,8 +13,17 @@ const authRegister = {
           password: ""
         };
       };
+
       ctrl.createUser = function(event){
-        AuthService.signUp(ctrl.user.username, ctrl.user.password,  ctrl.user.email);
+        return AuthService.signUp(event.user.username, event.user.password,  event.user.email)
+          .then( function(user) {
+            //success
+            console.log('USER', user);
+            $state.go('app');
+          }, function (reason) {
+            //failure
+            ctrl.error = reason.message;
+          });
       };
     }
 };

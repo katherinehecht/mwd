@@ -11,6 +11,9 @@ angular
             .state('home', {
                 parent: 'app',
                 url: '/',
-                component: 'home'
+                component: 'home',
+                data: {
+                  requiredAuth: true
+                }
             });
 });
