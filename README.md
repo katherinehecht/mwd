@@ -1,6 +1,6 @@
 <h1>Feature 3</h1>
 April 27, 2020     <br>
-Netids: khecht, mcresap2, dbozzo, sshin1 <br>
+Netids: khecht, mcresap, dbozzo, sshin1 <br>
 Names: Katherine Hecht, Libby(Maria) Cresap, Dominic Bozzo, Andy Shin <br>
 </p>
 <h2>Overview:</h2>
