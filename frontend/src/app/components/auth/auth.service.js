@@ -1,9 +1,3 @@
-// class AuthService {
-//   constructor(Parse){
-//     this.Parse = Parse;
-//     this.authData = null;
-//   }
-
 function AuthService(Parse) {
   var parse = Parse;
   var authData = null;
@@ -61,10 +55,12 @@ function AuthService(Parse) {
 
   function resolve(nothing){
     console.log("done");
+    return true;
   }
 
   function reject(nothing) {
     console.log("not done");
+    return false;
   }
 
   this.isAuthenticated = function(){

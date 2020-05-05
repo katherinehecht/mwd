@@ -1,5 +1,11 @@
 var home = {
-    templateUrl: './home.html'
+    templateUrl: './home.html',
+    controller: function($state){
+      var ctrl = this;
+      ctrl.$onInit = function() {
+        console.log("made it to home");
+      }
+    }
 };
 
 angular
