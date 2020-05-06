@@ -1,3 +1,6 @@
+<h1>Feature 5</h1>
+Authentication included. Now must be logged in to view /explore, /wallet, and /deal/:id
+
 <h1>Feature 3</h1>
 April 27, 2020     <br>
 April 27, 2020 <br>
