@@ -1,5 +1,5 @@
 <a name="0.5.0"></a>
-## Release [0.5.0] (2020-05-05) (Authentication)
+## Release [0.5.0](https://github.com/katherinehecht/mwd/releases/tag/0.5.0) (2020-05-05) (Authentication)
 ## Added (Feature 5)
 * Added authentication module with login/register components
 * created protected routes on explore, wallet, and deal, because those are only for users to join
@@ -10,7 +10,7 @@
 * added further connectivity and functionality with parse database
 
 <a name="0.3"></a>
-## Release [0.3](https://github.com/katherinehecht/mwd/pull/7/files) (2020-03-03) (Feature 2)
+## Release [0.3](https://github.com/katherinehecht/mwd/releases/tag/0.3) (2020-03-03) (Feature 2)
 ## Added (Feature 3)
 * Added parse database backend for all data requests and persistence
 * integrated node foursquare API to list more venues for users to explore
