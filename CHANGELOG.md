@@ -1,5 +1,5 @@
-<a name="0.4"></a>
-## Release [0.4] (2020-05-05) (Authentication)
+<a name="0.5.0"></a>
+## Release [0.5.0] (2020-05-05) (Authentication)
 ## Added (Feature 5)
 * Added authentication module with login/register components
 * created protected routes on explore, wallet, and deal, because those are only for users to join
