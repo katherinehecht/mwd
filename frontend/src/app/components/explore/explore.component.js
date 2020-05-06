@@ -13,7 +13,6 @@ var explore = {
 
       this.$onInit = function () {
         // load deals to display forom parse
-        console.log()
         DealModel.getNumDeals(ctrl.pageSize ,ctrl.curr_page).then(function(results) {
           ctrl.num_deals = results;
           console.log('numdeals', ctrl.num_deals);

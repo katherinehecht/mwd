@@ -1,7 +1,8 @@
 angular
 .module('components.auth',[
   'ui.router',
-  'ngParse'
+  'ngParse',
+  'ngMaterial'
 ])
 .run(function ($transitions, $state, AuthService) {
 

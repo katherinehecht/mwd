@@ -3,7 +3,6 @@ var home = {
     controller: function($state){
       var ctrl = this;
       ctrl.$onInit = function() {
-        console.log("made it to home");
       }
     }
 };
@@ -19,7 +18,7 @@ angular
                 url: '/',
                 component: 'home',
                 data: {
-                  requiredAuth: true
+                  requiredAuth: false
                 }
             });
 });

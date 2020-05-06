@@ -1,8 +1,17 @@
 <form name="authForm" novalidate ng-submit="$ctrl.submitForm();">
     <div style="width: 100%;" layout="column" layout-align="center center">
-        <div>
+        <!--<div>
             <img src="img/logo.png" width="197px" style="padding-bottom:30px;" />
-        </div>
+        </div>-->
+        <header class="header">
+            <md-toolbar  md-elevation="1">
+                <div class="md-toolbar-tools">
+                    <h3 class="md-title">
+                        <a ui-sref="home" ui-sref-active="active"> <i class="material-icons">local_drink</i>beNDer</a>
+                    </h3>
+                </div>
+            </md-toolbar>
+        </header>
         <div>
             <md-list>
                 <md-list-item ng-if="$ctrl.button === 'Sign Up & Create Account'" class="">
@@ -35,16 +44,24 @@
                         <label> Password </label>
                         <input required type="password" class="auth_input" ng-model="$ctrl.user.password" placeholder="password...">
                     </mdc-text-field>
-                    <md-button class="forgot-button" ng-if="$ctrl.button === 'Login'" ng-click="$ctrl.navReset();" style="position: absolute; right:10px; top:35px;">
-                        <p class="forgot-text button">FORGOT?</p>
-                    </md-button>
-                </md-list-item>
+                  </md-list-item>
+
+
+                <md-list-item>
+
+                <md-button type="submit" ng-disabled="authForm.$invalid" class="md-raised auth__button" ng-class="{'mdc-theme--secondary-bg': !authForm.$invalid}">
+                    <h4 class="auth__buttonText button">{{ $ctrl.button }}</h4>
+                </md-button>
+              </md-list-item>
+              <md-list-item>
+
+              <md-button class="forgot-button" ng-if="$ctrl.button === 'Login'" ng-click="$ctrl.navReset();" style="position: absolute;">
+                  <p class="forgot-text button">FORGOT?</p>
+              </md-button>
+          </md-list-item>
+
             </md-list>
-        </div>
-        <div>
-            <md-button type="submit" ng-disabled="authForm.$invalid" class="md-raised auth__button" ng-class="{'mdc-theme--secondary-bg': !authForm.$invalid}">
-                <h1 class="auth__buttonText button">{{ $ctrl.button }}</h1>
-            </md-button>
-        </div>
+
+
     </div>
 </form>
