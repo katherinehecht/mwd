@@ -1,3 +1,14 @@
+<a name="0.4"></a>
+## Release [0.4] (2020-05-05) (Authentication)
+## Added (Feature 5)
+* Added authentication module with login/register components
+* created protected routes on explore, wallet, and deal, because those are only for users to join
+  * /home is still unprotected, so that new users can be directed to login
+## Changes (Feature 5)
+* Implemented  styling to improve upon defaults
+* /explore, /wallet, and /deal/:dealid are now protected routes that you must be logged in to view
+* added further connectivity and functionality with parse database
+
 <a name="0.3"></a>
 ## Release [0.3](https://github.com/katherinehecht/mwd/pull/7/files) (2020-03-03) (Feature 2)
 ## Added (Feature 3)
